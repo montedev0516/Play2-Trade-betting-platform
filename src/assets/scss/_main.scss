@@ -1,0 +1,40 @@
+@import './fonts.scss';
+@import './normalize.scss';
+
+.mobile-view {
+  display: none;
+  @include media-breakpoint('mobile') {
+    display: block;
+  }
+}
+
+.desktop-view {
+  @include media-breakpoint('mobile') {
+    display: none;
+  }
+}
+
+.up-color {
+  color: $green;
+}
+.down-color {
+  color: $red;
+}
+
+.justify-end {
+  justify-content: flex-end !important;
+}
+
+.justify-start {
+  justify-content: flex-start !important;
+}
+.rotate {
+  transform: rotate(180deg);
+}
+
+.reverse {
+  flex-direction: row-reverse;
+}
+.items-end {
+  align-items: end;
+}

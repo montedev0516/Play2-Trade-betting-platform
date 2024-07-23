@@ -1,0 +1,36 @@
+@mixin media-screen-mobile() {
+  @media screen and (max-width: 480px) {
+    @content;
+  }
+  // @media screen and (orientation: portrait) {
+  //   @content;
+  // }
+}
+
+@mixin media-screen-mobile-landscape() {
+  @media screen and (min-width: 480px) and (max-width: 480px) and (orientation: landscape) {
+    @content;
+  }
+}
+
+@mixin media-breakpoint($breakpoint) {
+  @if $breakpoint == 'mobile' {
+    @include media-screen-mobile() {
+      @content;
+    }
+  }
+  @if $breakpoint == 'mobile-landscape' {
+    @include media-screen-mobile-landscape() {
+      @content;
+    }
+  }
+
+  @if ($breakpoint == 'mobile-mix') {
+    @include media-screen-mobile() {
+      @content;
+    }
+    // @include media-screen-mobile-landscape() {
+    //   @content;
+    // }
+  }
+}
